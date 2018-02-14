@@ -3,38 +3,52 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
+import {TabsPage} from '../pages/tabs/tabs'
+import { ListingsPage } from '../pages/listings/listings'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ViewItemPage } from '../pages/view-item/view-item';
+import { PendingOffersPage } from '../pages/pending-offers/pending-offers';
+import { RecentTransactionsPage}  from '../pages/recent-transactions/recent-transactions'
+import { OfferViewPage } from '../pages/offer-view/offer-view'
+import { TransactionViewPage } from '../pages/transaction-view/transaction-view'
+import { BlockchainProvider } from '../providers/blockchain/blockchain';
+
+//import { HttpModule, Http } from '@angular/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    ListingsPage,
+    TabsPage,
+    ViewItemPage,
+    PendingOffersPage,
+    RecentTransactionsPage,
+    OfferViewPage,
+    TransactionViewPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    //HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    ListingsPage,
+    TabsPage,
+    ViewItemPage,
+    PendingOffersPage,
+    RecentTransactionsPage,
+    OfferViewPage,
+    TransactionViewPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BlockchainProvider,
+    //DatabaseProvider
   ]
 })
 export class AppModule {}

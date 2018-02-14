@@ -1,0 +1,33 @@
+<!--
+  Generated template for the PendingOffersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pending Offers</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="master">
+    <ion-card *ngFor="let f of pendingOffers">
+        <ion-card-header>
+          {{f.name}}
+        </ion-card-header>
+        <ion-card-content>
+          <img src={{f.img}} alt="fish">
+          <p>Fish Type: {{f.name}}</p>
+          <p>Quantity: {{f.weight}}lbs</p>
+          <p>Price Offered: ${{f.price}}/lb</p>
+          <p>Location: {{f.location}}</p>
+          <p>Port: {{f.port}}</p>
+          <p>
+            <button ion-button disabled> Offer Pending</button>
+          </p>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
