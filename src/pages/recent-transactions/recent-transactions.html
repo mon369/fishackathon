@@ -10,8 +10,9 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding class="master">
-    <ion-card *ngFor="let f of recentTx">
-        <ion-card-header>
+    <ion-card *ngFor="let f of recentTx; let i = index" >
+      <div *ngIf="f.show">
+      <ion-card-header>
           {{f.date}}
         </ion-card-header>
         <ion-card-content>
@@ -22,5 +23,6 @@
           <p>Port: {{f.port}}</p>
           <p>Price Purchased: ${{f.price}}/lb</p>
         </ion-card-content>
+        </div>
       </ion-card>
 </ion-content>

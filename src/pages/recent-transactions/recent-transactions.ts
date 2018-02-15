@@ -16,16 +16,19 @@ import { TransactionViewPage } from '../transaction-view/transaction-view';
 })
 export class RecentTransactionsPage {
 
+  intervalIndex: number = 0;
+  
   recentTx: {
     id: number,
     name: string,
-    img : string,
+    img: string,
     weight: number,
     price: number,
     location: string,
-    port : string
-    sold : boolean,
-    date : string
+    port: string
+    sold: boolean,
+    date: string,
+    show: boolean
   }[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -38,10 +41,11 @@ export class RecentTransactionsPage {
         "img": "assets/imgs/fishes/spotted_sunfish.jpg",
         "weight": 150,
         "price": 0.80,
-        "location" : "Fiji",
-        "port" : "Levuka",
+        "location": "Fiji",
+        "port": "Levuka",
         "sold": true,
-        "date" : "February 11, 2018"
+        "date": "February 11, 2018",
+        "show" : false
       },
       {
         "id": 1,
@@ -49,20 +53,22 @@ export class RecentTransactionsPage {
         "img": "assets/imgs/fishes/spotted_sunfish.jpg",
         "weight": 150,
         "price": 0.80,
-        "location" : "Fiji",
-        "port" : "Levuka",
+        "location": "Fiji",
+        "port": "Levuka",
         "sold": true,
-        "date" : "February 11, 2018"
+        "date": "February 11, 2018",
+        "show" : false
       }, {
         "id": 3,
         "name": "Large Bigeye",
         "img": "assets/imgs/fishes/large_bigeye.jpg",
         "weight": 120,
         "price": 0.60,
-        "location" : "Fiji",
-        "port" : "Rotuma",
+        "location": "Fiji",
+        "port": "Rotuma",
         "sold": true,
-        "date" : "February 10, 2018"
+        "date": "February 10, 2018",
+        "show" : false
       },
       {
         "id": 2,
@@ -70,10 +76,11 @@ export class RecentTransactionsPage {
         "weight": 100,
         "img": "assets/imgs/fishes/yellowfish_tuna.jpg",
         "price": 0.40,
-        "location" : "Fiji",
+        "location": "Fiji",
         "port": "Rotuma",
         "sold": true,
-        "date" : "February 10, 2018"
+        "date": "February 10, 2018",
+        "show" : false
       },
       {
         "id": 4,
@@ -81,19 +88,35 @@ export class RecentTransactionsPage {
         "img": "assets/imgs/fishes/swordfish.jpg",
         "weight": 90,
         "price": 0.25,
-        "location" : "Fiji",
-        "port" : "Suva",
+        "location": "Fiji",
+        "port": "Suva",
         "sold": true,
-        "date" : "February 09, 2018"
-      }
+        "date": "February 09, 2018",
+        "show" : false
+      }]
+  }
 
-    ]
+  ionViewDidEnter() {
+       var intervalObj = setInterval(()=>{
+        
+        if( this.intervalIndex < this.recentTx.length){
+            this.recentTx[this.intervalIndex].show = true;
+            console.log(this.intervalIndex);
+            this.intervalIndex++;
+            
+        }else{
+          clearInterval(intervalObj);
+          console.log("Done!")
+        }  
+       }, 3000);
+  }
+
   
-    console.log(this.recentTx)
+
+  viewTx(txData: any) {
+    this.navCtrl.push(TransactionViewPage, { tx: txData })
   }
 
-  viewTx(txData :any){
-    this.navCtrl.push(TransactionViewPage, {tx : txData})
-  }
+
 
 }
