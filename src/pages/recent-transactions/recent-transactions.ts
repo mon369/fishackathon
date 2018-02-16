@@ -108,7 +108,7 @@ export class RecentTransactionsPage {
           clearInterval(intervalObj);
           console.log("Done!")
         }  
-       }, 3000);
+       }, 100);
   }
 
   

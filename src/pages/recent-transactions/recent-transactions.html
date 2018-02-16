@@ -9,20 +9,45 @@
     <ion-title>Recent Transactions</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding class="master">
-    <ion-card *ngFor="let f of recentTx; let i = index" >
-      <div *ngIf="f.show">
-      <ion-card-header>
-          {{f.date}}
-        </ion-card-header>
-        <ion-card-content>
-          <img src={{f.img}} alt="fish">
-          <p>Fish Type: {{f.name}}</p>
-          <p>Quantity: {{f.weight}}lbs</p>
-          <p>Location: {{f.location}}</p>
-          <p>Port: {{f.port}}</p>
-          <p>Price Purchased: ${{f.price}}/lb</p>
-        </ion-card-content>
-        </div>
-      </ion-card>
+<ion-content no-padding >
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 style="background-color:aqua">Yellow Fish Tuna Pic</ion-col>
+      <ion-col col-9>
+        <h5>Yellow Fish Tuna</h5>
+        <p>Delicious fish, and a whole lot of mercury.</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>Quantity: </ion-col> 
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>Price: </ion-col> 
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>Purchased: </ion-col> 
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>Seller: </ion-col> 
+    </ion-row>
+    <ion-row *ngFor="let t of recentTx; let i = index;">
+        <ion-col col-2></ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-10>
+          <div *ngIf="t.show">
+            <ion-card>
+              <ion-card-header>
+                  {{t.date}}
+              </ion-card-header>
+              <ion-card-content>
+                <img src={{t.img}}  alt="fish">
+                <p>Hashcode:</p>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    
 </ion-content>
