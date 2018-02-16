@@ -6,13 +6,13 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Recent Transactions</ion-title>
+    <ion-title>Blockchain Ledger</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content no-padding >
-  <ion-grid>
+<ion-content >
+  <ion-grid no-padding>
     <ion-row>
-      <ion-col col-3 style="background-color:aqua">Yellow Fish Tuna Pic</ion-col>
+      <ion-col col-3>Yellow Fish Tuna Pic</ion-col>
       <ion-col col-9>
         <h5>Yellow Fish Tuna</h5>
         <p>Delicious fish, and a whole lot of mercury.</p>
@@ -30,10 +30,10 @@
     <ion-row>
         <ion-col col-12>Seller: </ion-col> 
     </ion-row>
+
     <ion-row *ngFor="let t of recentTx; let i = index;">
-        <ion-col col-2></ion-col>
-        <ion-col col-2></ion-col>
-        <ion-col col-10>
+        <ion-col col-2 class="block"></ion-col>
+        <ion-col col-10 class="block">
           <div *ngIf="t.show">
             <ion-card>
               <ion-card-header>

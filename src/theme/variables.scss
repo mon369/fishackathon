@@ -1,3 +1,8 @@
+//Import Google Font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+  font-family: 'Open Sans', sans-serif;
+}
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
@@ -39,17 +44,19 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  lightdark: #363636
 );
 
 
 
 //Global Variables
-ion-content{
-  background-color: #32db64
-}
 
+$card-ios-border-radius:	1px;
+$card-md-border-radius:	1px;
+$card-wp-border-radius: 1px;
 
+$card-ios-box-shadow:	0px;
+$card-md-box-shadow:	0px;
+$card-wp-box-shadow:  0px;
 
 // App iOS Variables
 // --------------------------------------------------
