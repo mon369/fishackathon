@@ -1,3 +1,45 @@
-.block{
-    background: url("/assets/imgs/background2.jpg")
+ion-col{
+    //border: 1px solid black;
 }
+
+.block{
+    background: #e4e4e4;
+    margin: 0;
+}
+
+.horizontal_line_column{
+    
+    padding: 0;
+    img{
+        width: 100%;
+    }
+}
+.banner{
+    background: #f4f4f4;
+    //border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    .heading{
+        font-weight: bold;
+        color: #7f7f7f;
+        
+    }
+    .title{
+        color: #414141;
+    }    
+}
+
+.blockchain{
+    //border: 1px solid black;
+    margin-left: 0px;
+    padding-left: 0px;
+
+
+}
+
+.blockchain_thumbnail_pic{
+    img{
+        height: 100%;
+    }
+}
+

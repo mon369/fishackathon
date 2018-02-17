@@ -9,33 +9,36 @@
     <ion-title>Blockchain Ledger</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content >
-  <ion-grid no-padding>
-    <ion-row>
-      <ion-col col-3>Yellow Fish Tuna Pic</ion-col>
+<ion-content class="block" no-padding>
+  <ion-grid>
+    <div class="banner">
+      <ion-row align-items-center>
+      <ion-col col-3 class="blockchain_thumbnail_pic"><img src="/assets/imgs/fishes/yellowfish_tuna.jpg"  alt="fish"></ion-col>
       <ion-col col-9>
-        <h5>Yellow Fish Tuna</h5>
-        <p>Delicious fish, and a whole lot of mercury.</p>
+        <h5><span class="heading title">YELLOWFIN TUNA</span></h5>
+        <p class="title">Delicious fish, and a whole lot of mercury.</p>
       </ion-col>
     </ion-row>
-    <ion-row>
-        <ion-col col-12>Quantity: </ion-col> 
+    <ion-row align-items-center>
+        <ion-col col-12 ><span class="heading">QUANTITY:</span> 100lbs </ion-col> 
+    </ion-row >
+    <ion-row align-items-center>
+        <ion-col col-12><span class="heading">CATCH DATE:</span> 0.40/lb</ion-col> 
     </ion-row>
-    <ion-row>
-        <ion-col col-12>Price: </ion-col> 
+    <ion-row align-items-center>
+        <ion-col col-12><span class="heading">PORT:</span> February 16, 2018</ion-col> 
     </ion-row>
-    <ion-row>
-        <ion-col col-12>Purchased: </ion-col> 
+    <ion-row align-items-center class="banner_bottom">
+        <ion-col col-12><span class="heading">CURRENT OWNER:</span></ion-col> 
     </ion-row>
-    <ion-row>
-        <ion-col col-12>Seller: </ion-col> 
-    </ion-row>
-
-    <ion-row *ngFor="let t of recentTx; let i = index;">
-        <ion-col col-2 class="block"></ion-col>
-        <ion-col col-10 class="block">
-          <div *ngIf="t.show">
-            <ion-card>
+    </div>
+    <div>
+    <ion-row  align-items-center *ngFor="let t of recentTx; let i = index;">
+        <ion-col col-1></ion-col>
+        <ion-col col-2 class="horizontal_line_column"><img src="https://png.icons8.com/color/50/000000/horizontal-line.png" width="auto "alt=""></ion-col>
+        <ion-col col-9 >
+          <div *ngIf="t.show" class="blockchain">
+            <ion-card no-padding no-margin>
               <ion-card-header>
                   {{t.date}}
               </ion-card-header>
@@ -46,7 +49,6 @@
           </div>
         </ion-col>
     </ion-row>
+    </div>
   </ion-grid>
-
-    
 </ion-content>
