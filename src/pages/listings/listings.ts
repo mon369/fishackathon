@@ -35,7 +35,7 @@ export class ListingsPage {
     this.fishData = [
       {
         "id": 0,
-        "name": "Yellowfish Tuna",
+        "name": "Yellowfin Tuna",
         "weight": 100,
         "img": "assets/imgs/fishes/yellowfish_tuna.jpg",
         "price": 0.40,

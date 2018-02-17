@@ -7,14 +7,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Buyer's Dashboard</ion-title>
+    <ion-title>Listings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding class="block">
-  <ion-row class="banner">
-
-  </ion-row>
+<ion-content class="block">
+  <ion-grid>
+    <div *ngFor="let l of fishData"  >
+    <ion-row class="list_banner" align-items-center>
+      <ion-col col-3>
+        <img src={{l.img}} alt="">
+      </ion-col>
+      <ion-col col-6>
+        <p>{{l.name}}</p>
+        <p>Quantity: {{l.weight}}lbs.</p>
+        <p>Price: ${{l.price}}/lb</p>
+        <p><ion-icon name="pin"></ion-icon>&nbsp; {{l.port}}, {{l.location}}</p>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button block outline color="light">Buy</button><br>
+        <button ion-button block outline color="light">Offer</button>
+      </ion-col>
+    </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>

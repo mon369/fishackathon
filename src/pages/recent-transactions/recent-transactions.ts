@@ -96,7 +96,7 @@ export class RecentTransactionsPage {
       },
       {
         "hashcode": "fb92427ae41e4",
-        "name": "Yellowfish Tuna",
+        "name": "Yellowfin Tuna",
         "weight": 100,
         "img": "assets/imgs/fishes/yellowfish_tuna.jpg",
         "price": 0.40,

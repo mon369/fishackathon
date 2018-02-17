@@ -1,26 +1,35 @@
-.block{
-    background: linear-gradient(45deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 75%);
-    margin: 0;
+// .block{
+//     background: linear-gradient(45deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 50%);
+//     margin: 0;
+// }
+
+
+.wireframe_border{
+    border:1px solid black;
 }
 
 
-.banner{
-    background: rgba(0, 0, 0, .1);
-    color: white;
+.list_banner{
+    background: rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
     //border: 1px solid black;
     padding: 20px;
     margin-top: 10pt;
-    margin-left: -15pt;
+    margin-left: 10pt;
     margin-right: 10pt;
-    border-radius: 15pt;
+    border-radius: 3pt;
     margin-bottom: 0pt;
     .heading{
         font-weight: bold;
-        color: white;
-        
+        color: whitesmoke;
     }
     .title{
-        color: white;
+        color: whitesmoke;
         vertical-align: top;
     }    
+    button{
+        width: 100%;
+        color: whitesmoke
+        
+    }
 }
