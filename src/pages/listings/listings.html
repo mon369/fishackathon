@@ -13,21 +13,8 @@
 </ion-header>
 
 
-<ion-content padding class="master">
-  <ion-card *ngFor="let f of fishData; let i = index">
-    <ion-card-header>
-      {{f.name}}
-    </ion-card-header>
-    <ion-card-content>
-      <img src="{{f.img}}" alt="fish" width="100" />
-      <p>Weight: {{f.weight}}lbs</p>
-      <p>Price: ${{f.price}}/lb</p>
-      <p>Location: {{f.location}}</p>
-      <p>Port: {{f.port}}</p>
-      <p>
-        <button ion-button *ngIf= "!f.sold" (click)="sell(i)">Buy</button>
-        <button ion-button *ngIf= "f.sold" disabled> Offer Pending</button>
-      </p>
-    </ion-card-content>
-  </ion-card>
+<ion-content padding class="block">
+  <ion-row class="banner">
+
+  </ion-row>
 </ion-content>

@@ -36,7 +36,7 @@ ion-grid {
 }
 
 .horizontal_line_col1{
-    min-height: 20vh;
+    min-height: 44vh;
     margin-bottom: 0pt;
     border-right: 3pt solid whitesmoke;
     vertical-align: middle;
@@ -52,6 +52,7 @@ ion-grid {
     text-align: center;
     hr{
         margin-top: 10pt;
+        margin-right: -10pt;
         border: none;
         height: 3pt;
         background-color: whitesmoke;
@@ -72,15 +73,15 @@ ion-grid {
     margin-right: 10pt;
     border-radius: 15pt;
     margin-bottom: 0pt;
-    .heading{
-        font-weight: bold;
-        color: white;
+    // .heading{
+    //     font-weight: bold;
+    //     color: white;
         
-    }
-    .title{
-        color: white;
-        vertical-align: top;
-    }    
+    // }
+    // .title{
+    //     color: white;
+    //     vertical-align: top;
+    // }    
 }
 
 

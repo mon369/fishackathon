@@ -1,0 +1,26 @@
+.block{
+    background: linear-gradient(45deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 75%);
+    margin: 0;
+}
+
+
+.banner{
+    background: rgba(0, 0, 0, .1);
+    color: white;
+    //border: 1px solid black;
+    padding: 20px;
+    margin-top: 10pt;
+    margin-left: -15pt;
+    margin-right: 10pt;
+    border-radius: 15pt;
+    margin-bottom: 0pt;
+    .heading{
+        font-weight: bold;
+        color: white;
+        
+    }
+    .title{
+        color: white;
+        vertical-align: top;
+    }    
+}
