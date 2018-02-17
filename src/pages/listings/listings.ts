@@ -93,7 +93,7 @@ export class ListingsPage {
   sell(id : number){
     let alert = this.alertCtrl.create({
       title: 'Confirm purchase',
-      message: 'Do you want to buy this catch?',
+      message: this.fishData[id].weight + 'lbs of ' +this.fishData[id].name + ' for ' + '\n$' + this.fishData[id].price * this.fishData[id].weight + '?',
       buttons: [
         {
           text: 'Cancel',
@@ -105,7 +105,21 @@ export class ListingsPage {
         {
           text: 'Buy',
           handler: () => {
+            let alert2 = this.alertCtrl.create({
+              title: 'Success!',
+              message: 'A confirmation has been sent to you and the seller.',
+              buttons: [ 
+                {
+                  text: 'Ok',
+                  handler: () => {
+                    this.fishData[id].sold = true;
+                  }
+                }
+              ]
+            });
+            alert2.present();
             this.fishData[id].sold = true;
+
           }
         }
       ]
