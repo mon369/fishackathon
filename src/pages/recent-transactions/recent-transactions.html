@@ -8,8 +8,8 @@
   <ion-navbar>
     <ion-title>
       <ion-icon name="cube"></ion-icon>
-        Blockchain Transaction Ledger
-      
+      Blockchain Transaction Ledger
+
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -17,59 +17,79 @@
   <ion-grid>
     <div class="banner">
       <ion-row align-items-center>
-      <ion-col col-4 class="blockchain_thumbnail_pic"><img src="/assets/imgs/fishes/yellowfish_tuna.jpg"  alt="fish"></ion-col>
-      <ion-col col-8>
-        <h5><span class="heading title">YELLOWFIN TUNA</span></h5>
-        <p class="title">Delicious fish, and a whole lot of mercury.</p>
-      </ion-col>
-    </ion-row>
-    <ion-row align-items-center>
-        <ion-col col-12 ><span class="heading">QUANTITY:</span> 100lbs </ion-col> 
-    </ion-row >
-    <ion-row align-items-center>
-        <ion-col col-12><span class="heading">CATCH DATE:</span> 0.40/lb</ion-col> 
-    </ion-row>
-    <ion-row align-items-center>
-        <ion-col col-12><span class="heading">PORT:</span> February 16, 2018</ion-col> 
-    </ion-row>
-    <ion-row align-items-center class="banner_bottom">
-        <ion-col col-12><span class="heading">CURRENT OWNER:</span></ion-col> 
-    </ion-row>
+        <ion-col col-4 class="blockchain_thumbnail_pic">
+          <img src="/assets/imgs/fishes/yellowfish_tuna.jpg" alt="fish">
+        </ion-col>
+        <ion-col col-8>
+          <h5>
+            <span class="heading title">YELLOWFIN TUNA</span>
+          </h5>
+          <p class="title">Laisa Keni is selling 100lbs of yellowfin tuna for $0.40/lb</p>
+        </ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-12>
+          <span class="heading">QUANTITY:</span> 100lbs </ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-12>
+          <span class="heading">CATCH DATE:</span> 0.40/lb</ion-col>
+      </ion-row>
+      <ion-row align-items-center>
+        <ion-col col-12>
+          <span class="heading">PORT:</span> February 16, 2018</ion-col>
+      </ion-row>
+      <ion-row align-items-center class="banner_bottom">
+        <ion-col col-12>
+          <span class="heading">CURRENT OWNER:LAISA KENI</span>
+        </ion-col>
+      </ion-row>
     </div>
-    <div>
-    <ion-row  align-items-center *ngFor="let t of recentTx; let i = index;">
+    <div *ngFor="let t of recentTx; let i = index;">
+      <ion-row *ngIf="t.show" align-items-center no-padding>
         <ion-col col-1 class="horizontal_line_col1">
-            <!-- <ion-icon name="logo-buffer"></ion-icon> -->
-            <div class='circle'></div>
-          </ion-col>
-          <ion-col col-2 class="horizontal_line_column">
-              <ion-icon name="pin"></ion-icon>
-            <hr />
+          <!-- <ion-icon name="logo-buffer"></ion-icon> -->
+          <div class='circle'></div>
+        </ion-col>
+        <ion-col col-2 class="horizontal_line_column">
+          <ion-icon name={{t.icon}}></ion-icon>
+          <hr />
           <!-- <img src="https://png.icons8.com/color/50/000000/horizontal-line.png" width="auto "alt=""> -->
         </ion-col>
-        <ion-col col-9 >
-          <div *ngIf="t.show" class="blockchain">
-            <ion-card no-padding no-margin>
-              <ion-card-header>
-                <ion-row>
-                  <ion-col col-9 >
-                    {{t.date}} 
-                  </ion-col>
-                  <ion-col col-3 text-right	 >
-                    <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
-                    <!-- <ion-checkbox color="secondary" checked="true"></ion-checkbox> -->
-                    <!-- <ion-icon color="secondary" ios="ios-done-all" md="md-done-all"></ion-icon> -->
-
-                  </ion-col>
-                </ion-row>
-              </ion-card-header>
-              <ion-card-content>
-                <p >Hashcode:87428FC522803D31065E7BCE3CF03FE475096631E5E07BBD7A0FDE60C4CF25C7</p>
-              </ion-card-content>
-            </ion-card>
-          </div>
+        <ion-col col-9>
+          <ion-card>
+            <ion-card-header>
+              <ion-row align-items-center>
+                <ion-col col-9>{{t.date}}</ion-col>
+                <ion-col col-3 text-center>
+                  <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col>
+                  <p class="heading">{{t.event}}</p>
+                  <p>{{t.actor.name}} * {{t.actor.type}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row align-items-center>
+                <ion-col col-1>
+                  <ion-icon name="pin" color="secondary"></ion-icon>
+                </ion-col>
+                <ion-col col-10>
+                  <p>{{t.port}}, {{t.location}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <p>Hashcode: {{t.hashcode}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
         </ion-col>
-    </ion-row>
+      </ion-row>
     </div>
   </ion-grid>
 </ion-content>

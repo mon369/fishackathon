@@ -19,7 +19,7 @@ export class RecentTransactionsPage {
   intervalIndex: number = 0;
   
   recentTx: {
-    id: number,
+    hashcode: string,
     name: string,
     img: string,
     weight: number,
@@ -28,7 +28,13 @@ export class RecentTransactionsPage {
     port: string
     sold: boolean,
     date: string,
-    show: boolean
+    show: boolean,
+    event: string,
+    actor: {
+      name: string,
+      type: string
+    },
+    icon: string
   }[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -36,7 +42,7 @@ export class RecentTransactionsPage {
   ionViewDidLoad() {
     this.recentTx = [
       {
-        "id": 0,
+        "hashcode": "e3b0c44298fc1c149af",
         "name": "Spotted Sunfish",
         "img": "assets/imgs/fishes/spotted_sunfish.jpg",
         "weight": 150,
@@ -45,10 +51,16 @@ export class RecentTransactionsPage {
         "port": "Levuka",
         "sold": true,
         "date": "February 11, 2018",
-        "show" : false
+        "show" : false,
+        "event" : "Catch Registered By",
+        "actor" :{
+          "name" : "Laisa Keni",
+          "type" : "Fisher"
+        },
+        "icon" : "pin"
       },
       {
-        "id": 1,
+        "hashcode": "996fb92427ae41e464",
         "name": "Spotted Sunfish",
         "img": "assets/imgs/fishes/spotted_sunfish.jpg",
         "weight": 150,
@@ -57,9 +69,15 @@ export class RecentTransactionsPage {
         "port": "Levuka",
         "sold": true,
         "date": "February 11, 2018",
-        "show" : false
+        "show" : false,
+        "event" : "Transferred To",
+        "actor" :{
+          "name" : "Ratu Meli",
+          "type" : "Middleman"
+        },
+        "icon" : "swap"
       }, {
-        "id": 3,
+        "hashcode": "a495991b7852b855",
         "name": "Large Bigeye",
         "img": "assets/imgs/fishes/large_bigeye.jpg",
         "weight": 120,
@@ -68,31 +86,31 @@ export class RecentTransactionsPage {
         "port": "Rotuma",
         "sold": true,
         "date": "February 10, 2018",
-        "show" : false
+        "show" : false,
+        "event" : "Transferred To",
+        "actor" :{
+          "name" : "Timoci Pio",
+          "type" : "Exporter"
+        },
+        "icon" : "swap"
       },
       {
-        "id": 2,
+        "hashcode": "fb92427ae41e4",
         "name": "Yellowfish Tuna",
         "weight": 100,
         "img": "assets/imgs/fishes/yellowfish_tuna.jpg",
         "price": 0.40,
-        "location": "Fiji",
-        "port": "Rotuma",
+        "location": "China",
+        "port": "Shenzhen",
         "sold": true,
-        "date": "February 10, 2018",
-        "show" : false
-      },
-      {
-        "id": 4,
-        "name": "Swordfish",
-        "img": "assets/imgs/fishes/swordfish.jpg",
-        "weight": 90,
-        "price": 0.25,
-        "location": "Fiji",
-        "port": "Suva",
-        "sold": true,
-        "date": "February 09, 2018",
-        "show" : false
+        "date": "February 18, 2018",
+        "show" : false,
+        "event" : "Catch Registered By",
+        "actor" :{
+          "name" : "Sheng Supermarket",
+          "type" : "Retailer"
+        },
+        "icon" : "pin"
       }]
   }
 
