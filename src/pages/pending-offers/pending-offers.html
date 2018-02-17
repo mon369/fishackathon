@@ -13,21 +13,29 @@
 </ion-header>
 
 
-<ion-content padding class="master">
-    <ion-card *ngFor="let f of pendingOffers">
-        <ion-card-header>
-          {{f.name}}
-        </ion-card-header>
-        <ion-card-content>
-          <img src={{f.img}} alt="fish">
-          <p>Fish Type: {{f.name}}</p>
-          <p>Quantity: {{f.weight}}lbs</p>
-          <p>Price Offered: ${{f.price}}/lb</p>
-          <p>Location: {{f.location}}</p>
-          <p>Port: {{f.port}}</p>
+<ion-content class="block">
+  <ion-grid>
+    <div *ngFor="let offer of pendingOffers ; let i = index" >    
+      <ion-row align-items-center class="list_banner">
+        <ion-col col-3>
+          <img src={{offer.img}} alt="">
+        </ion-col>
+        <ion-col col-6>
+          <p class="title">{{offer.dateOffered}}</p>
+          <p>{{offer.name}}</p>
+          <p>Quantity: {{offer.weight}}lbs.</p>
+          <p>Price: ${{offer.price}}/lb</p>
           <p>
-            <button ion-button disabled> Offer Pending</button>
+            <ion-icon name="pin"></ion-icon>&nbsp; {{offer.port}}, {{offer.location}}</p>
+        </ion-col>
+        <ion-col col-3>
+
+          <p>
+            <button ion-button block outline color="light" disabled>Pending</button>
           </p>
-        </ion-card-content>
-      </ion-card>
+
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>

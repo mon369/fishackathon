@@ -15,7 +15,7 @@
 
 <ion-content class="block">
   <ion-grid>
-    <div *ngFor="let l of fishData"  >
+    <div *ngFor="let l of fishData; let i = index"  >
     <ion-row class="list_banner" align-items-center>
       <ion-col col-3>
         <img src={{l.img}} alt="">
@@ -27,8 +27,9 @@
         <p><ion-icon name="pin"></ion-icon>&nbsp; {{l.port}}, {{l.location}}</p>
       </ion-col>
       <ion-col col-3>
-        <button ion-button block outline color="light">Buy</button><br>
-        <button ion-button block outline color="light">Offer</button>
+        <p *ngIf="!l.sold"><button ion-button block outline color="light" (click)="sell(i)">Buy</button></p>
+        <p *ngIf="l.sold"><button ion-button block outline color="light" disabled>Pending</button></p>
+        <p><button ion-button block outline color="light">Offer</button></p>
       </ion-col>
     </ion-row>
     </div>
