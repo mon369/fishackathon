@@ -1,31 +1,83 @@
-ion-col{
-    //border: 1px solid black;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+/*       Just setting CSS for the page   */
+
+* {
+  margin: 0;
+  padding: 0;
 }
+
+ion-navbar ion-title {
+    align-items: center;
+    vertical-align: middle;
+
+}
+ion-grid {
+  width: 100vw;
+  font-family: Raleway;
+  background: linear-gradient(45deg, rgba(85,239,203,1) 0%,rgba(30,87,153,1) 0%,rgba(85,239,203,1) 0%,rgba(91,202,255,1) 75%);
+  color: #f7f7f7;
+  margin-bottom: 0pt;
+}
+
 
 .block{
     background: #e4e4e4;
     margin: 0;
 }
 
-.horizontal_line_column{
+.circle {
+    border-radius: 50%;
+    background-color: red;
+    width: 20px;
+}
+
+.horizontal_line_col1{
+    min-height: 20vh;
+    margin-bottom: 0pt;
+    border-right: 3pt solid whitesmoke;
+    vertical-align: middle;
     
+    ion-icon {
+        margin-right: 20pt;
+        padding-bottom: 10pt;
+    }
+}
+.horizontal_line_column{
+
+    margin-right: -5pt;
+    margin-left: 0pt;
     padding: 0;
+    text-align: center;
+    hr{
+        margin-top: 10pt;
+        border: none;
+        height: 3pt;
+        background-color: whitesmoke;
+    }
     img{
         width: 100%;
+        border-width: 30pt;
     }
 }
 .banner{
-    background: #f4f4f4;
+    background: rgba(0, 0, 0, .5);
+    color: white;
     //border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 20px;
+    margin-top: 10pt;
+    margin-left: -15pt;
+    margin-right: 10pt;
+    border-radius: 15pt;
+    margin-bottom: 0pt;
     .heading{
         font-weight: bold;
-        color: #7f7f7f;
+        color: white;
         
     }
     .title{
-        color: #414141;
+        color: white;
+        vertical-align: top;
     }    
 }
 
@@ -33,13 +85,16 @@ ion-col{
     //border: 1px solid black;
     margin-left: 0px;
     padding-left: 0px;
-
-
+    vertical-align: middle;
 }
 
 .blockchain_thumbnail_pic{
     img{
-        height: 100%;
+        height: 60pt;
+        width: 300pt;
     }
 }
 
+ion-icon {
+    font-size: 25pt;
+}

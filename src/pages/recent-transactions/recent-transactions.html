@@ -6,15 +6,19 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Blockchain Ledger</ion-title>
+    <ion-title>
+      <ion-icon name="cube"></ion-icon>
+        Blockchain Transaction Ledger
+      
+    </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content class="block" no-padding>
   <ion-grid>
     <div class="banner">
       <ion-row align-items-center>
-      <ion-col col-3 class="blockchain_thumbnail_pic"><img src="/assets/imgs/fishes/yellowfish_tuna.jpg"  alt="fish"></ion-col>
-      <ion-col col-9>
+      <ion-col col-4 class="blockchain_thumbnail_pic"><img src="/assets/imgs/fishes/yellowfish_tuna.jpg"  alt="fish"></ion-col>
+      <ion-col col-8>
         <h5><span class="heading title">YELLOWFIN TUNA</span></h5>
         <p class="title">Delicious fish, and a whole lot of mercury.</p>
       </ion-col>
@@ -34,13 +38,30 @@
     </div>
     <div>
     <ion-row  align-items-center *ngFor="let t of recentTx; let i = index;">
-        <ion-col col-1></ion-col>
-        <ion-col col-2 class="horizontal_line_column"><img src="https://png.icons8.com/color/50/000000/horizontal-line.png" width="auto "alt=""></ion-col>
+        <ion-col col-1 class="horizontal_line_col1">
+            <!-- <ion-icon name="logo-buffer"></ion-icon> -->
+            <div class='circle'></div>
+          </ion-col>
+          <ion-col col-2 class="horizontal_line_column">
+              <ion-icon name="pin"></ion-icon>
+            <hr />
+          <!-- <img src="https://png.icons8.com/color/50/000000/horizontal-line.png" width="auto "alt=""> -->
+        </ion-col>
         <ion-col col-9 >
           <div *ngIf="t.show" class="blockchain">
             <ion-card no-padding no-margin>
               <ion-card-header>
-                  {{t.date}}
+                <ion-row>
+                  <ion-col col-9 >
+                    {{t.date}} 
+                  </ion-col>
+                  <ion-col col-3 text-right	 >
+                    <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
+                    <!-- <ion-checkbox color="secondary" checked="true"></ion-checkbox> -->
+                    <!-- <ion-icon color="secondary" ios="ios-done-all" md="md-done-all"></ion-icon> -->
+
+                  </ion-col>
+                </ion-row>
               </ion-card-header>
               <ion-card-content>
                 <p >Hashcode:87428FC522803D31065E7BCE3CF03FE475096631E5E07BBD7A0FDE60C4CF25C7</p>
