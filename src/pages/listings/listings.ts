@@ -40,7 +40,7 @@ export class ListingsPage {
         "img": "assets/imgs/fishes/yellowfish_tuna.jpg",
         "price": 0.40,
         "location" : "Fiji",
-        "port": "Rotuma",
+        "port": "Lekuva",
         "sold": false
       }, {
         "id": 1,

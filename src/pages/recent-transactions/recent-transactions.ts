@@ -17,6 +17,7 @@ import { TransactionViewPage } from '../transaction-view/transaction-view';
 export class RecentTransactionsPage {
 
   intervalIndex: number = 0;
+  currentOwner: string;
   
   recentTx: {
     hashcode: string,
@@ -37,9 +38,7 @@ export class RecentTransactionsPage {
     icon: string
   }[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
+    
     this.recentTx = [
       {
         "hashcode": "e3b0c44298fc1c149af",
@@ -50,7 +49,7 @@ export class RecentTransactionsPage {
         "location": "Fiji",
         "port": "Levuka",
         "sold": true,
-        "date": "February 11, 2018",
+        "date": "February 17, 2018",
         "show" : false,
         "event" : "Catch Registered By",
         "actor" :{
@@ -68,7 +67,7 @@ export class RecentTransactionsPage {
         "location": "Fiji",
         "port": "Levuka",
         "sold": true,
-        "date": "February 11, 2018",
+        "date": "February 17, 2018",
         "show" : false,
         "event" : "Transferred To",
         "actor" :{
@@ -85,7 +84,7 @@ export class RecentTransactionsPage {
         "location": "Fiji",
         "port": "Rotuma",
         "sold": true,
-        "date": "February 10, 2018",
+        "date": "February 17, 2018",
         "show" : false,
         "event" : "Transferred To",
         "actor" :{
@@ -112,6 +111,12 @@ export class RecentTransactionsPage {
         },
         "icon" : "pin"
       }]
+
+      this.currentOwner = this.recentTx[0].actor.name;
+  }
+
+  ionViewDidLoad() {
+    
   }
 
   ionViewDidEnter() {
@@ -119,14 +124,14 @@ export class RecentTransactionsPage {
         
         if( this.intervalIndex < this.recentTx.length){
             this.recentTx[this.intervalIndex].show = true;
+            this.currentOwner = this.recentTx[this.intervalIndex].actor.name
             console.log(this.intervalIndex);
             this.intervalIndex++;
-            
         }else{
           clearInterval(intervalObj);
           console.log("Done!")
         }  
-       }, 1000);
+       }, 2000);
   }
 
   

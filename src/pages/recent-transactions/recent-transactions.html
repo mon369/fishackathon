@@ -22,7 +22,7 @@
           <h5>
             <span class="heading title">YELLOWFIN TUNA</span>
           </h5>
-          <p class="title">Laisa Keni is selling 100lbs of yellowfin tuna for $0.40/lb</p>
+          <p>Laisa Keni is selling 100lbs of yellowfin tuna for $0.40/lb</p>
         </ion-col>
       </ion-row>
       <ion-row align-items-center>
@@ -31,20 +31,21 @@
       </ion-row>
       <ion-row align-items-center>
         <ion-col col-12>
-          <span class="heading">CATCH DATE:</span> 0.40/lb</ion-col>
+          <span class="heading">CATCH DATE:</span> February 17, 2018</ion-col>
       </ion-row>
       <ion-row align-items-center>
-        <ion-col col-12>
-          <span class="heading">PORT:</span> February 16, 2018</ion-col>
-      </ion-row>
+          <ion-col col-12>
+            <span class="heading">ORIGIN:</span> Lekuva, Fiji</ion-col>
+        </ion-row>
       <ion-row align-items-center class="banner_bottom">
         <ion-col col-12>
-          <span class="heading">CURRENT OWNER: LAISA KENI</span>
-          <div text-right>
-            <ion-badge name="badge">Journey</ion-badge>
-          </div>
-
+          <span class="heading">CURRENT OWNER: {{currentOwner}}<br/></span>
         </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-12 text-right>
+              <ion-badge name="badge">Journey</ion-badge>
+          </ion-col>
       </ion-row>
     </div>
     <div *ngFor="let t of recentTx; let i = index;">
