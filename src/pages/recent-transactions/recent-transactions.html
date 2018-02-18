@@ -95,5 +95,42 @@
         </ion-col>
       </ion-row>
     </div>
+
+    <div *ngIf="certified"  no-padding>
+
+        <ion-row align-items-center no-padding>
+          <ion-col col-1 class="horizontal_line_col1">
+            <!-- <ion-icon name="logo-buffer"></ion-icon> -->
+            <div class='circle'></div>
+          </ion-col>
+          <ion-col col-2 class="horizontal_line_column">
+              <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <hr />
+            <!-- <img src="https://png.icons8.com/color/50/000000/horizontal-line.png" width="auto "alt=""> -->
+          </ion-col>
+          <ion-col col-9>
+            <ion-card>
+              <ion-card-header>
+                <ion-row align-items-center>
+                  <ion-col col-9 class="title">Certified!</ion-col>
+                  <ion-col col-3 text-right>
+                    <ion-icon color="secondary" name="checkmark-circle-outline"></ion-icon>
+                  </ion-col>
+                </ion-row>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col col-12>
+                    <img class="certification" src="/assets/imgs/shiptostore.png" style="width:55%;" alt="certification">
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
+    
+    
+
   </ion-grid>
 </ion-content>

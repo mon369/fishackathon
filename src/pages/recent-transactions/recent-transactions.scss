@@ -36,7 +36,7 @@ ion-grid {
 }
 
 .horizontal_line_col1{
-    min-height: 44vh;
+    min-height: 42vh;
     margin-bottom: 0pt;
     border-right: 3pt solid whitesmoke;
     vertical-align: middle;
@@ -100,4 +100,12 @@ ion-card{
     .heading{
         font-weight: bold;
     }
+}
+
+
+.certification{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

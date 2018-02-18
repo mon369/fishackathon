@@ -18,6 +18,7 @@ export class RecentTransactionsPage {
 
   intervalIndex: number = 0;
   currentOwner: string;
+  certified: boolean;
   
   recentTx: {
     hashcode: string,
@@ -38,7 +39,7 @@ export class RecentTransactionsPage {
     icon: string
   }[];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+    this.certified = false;
     this.recentTx = [
       {
         "hashcode": "e3b0c44298fc1c149af",
@@ -104,7 +105,7 @@ export class RecentTransactionsPage {
         "sold": true,
         "date": "February 22, 2018",
         "show" : false,
-        "event" : "Catch Registered By",
+        "event" : "End Destination",
         "actor" :{
           "name" : "Sheng Supermarket",
           "type" : "Retailer"
@@ -128,10 +129,11 @@ export class RecentTransactionsPage {
             console.log(this.intervalIndex);
             this.intervalIndex++;
         }else{
+          this.certified = true;
           clearInterval(intervalObj);
           console.log("Done!")
         }  
-       }, 2000);
+       }, 7000);
   }
 
   
