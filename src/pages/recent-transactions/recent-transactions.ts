@@ -102,7 +102,7 @@ export class RecentTransactionsPage {
         "location": "China",
         "port": "Shenzhen",
         "sold": true,
-        "date": "February 18, 2018",
+        "date": "February 22, 2018",
         "show" : false,
         "event" : "Catch Registered By",
         "actor" :{
