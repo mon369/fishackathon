@@ -39,11 +39,16 @@
       </ion-row>
       <ion-row align-items-center class="banner_bottom">
         <ion-col col-12>
-          <span class="heading">CURRENT OWNER:LAISA KENI</span>
+          <span class="heading">CURRENT OWNER: LAISA KENI</span>
+          <div text-right>
+            <ion-badge name="badge">Journey</ion-badge>
+          </div>
+
         </ion-col>
       </ion-row>
     </div>
     <div *ngFor="let t of recentTx; let i = index;">
+
       <ion-row *ngIf="t.show" align-items-center no-padding>
         <ion-col col-1 class="horizontal_line_col1">
           <!-- <ion-icon name="logo-buffer"></ion-icon> -->
